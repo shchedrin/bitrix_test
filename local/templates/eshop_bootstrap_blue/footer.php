@@ -123,8 +123,25 @@
 					<div class="col-sm-6 bx-up"><a href="javascript:void(0)" data-role="eshopUpButton"><i class="fa fa-caret-up"></i> <?=GetMessage("FOOTER_UP_BUTTON")?></a></div>
 				</div>
 			</div>
-
-
+            <div id="compare_list_count">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:catalog.compare.list",
+                "list_bottom",
+                array(
+                    "IBLOCK_TYPE" => "catalog",
+                    "IBLOCK_ID" => "2",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "DETAIL_URL" => "#SECTION_CODE#",
+                    "COMPARE_URL" => "/catalog/compare.php",
+                    "NAME" => "CATALOG_COMPARE_LIST",
+                    "AJAX_OPTION_ADDITIONAL" => ""
+                ),
+                false
+            );?>
+            </div>
 		</footer>
 		<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
 			<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "", array(
