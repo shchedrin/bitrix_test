@@ -145,6 +145,33 @@
 				array()
 			);?>
 		</div>
+
+<!--Форма отправки сообщения об ошибке по Ctrl+Enter-->
+        <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Вы нашли опечатку</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="find-error-form">
+                            <div class="form-group">
+                                <p class="success" style="display: none">Спасибо! Сообщение отправлено. Мы скоро все исправим.</p>
+                                <div class="form">
+                                    <p class="error-body"></p>
+                                    <textarea name="comment" class="form-control" rows="2" placeholder="Комментарий"></textarea>
+                                    <input type="hidden" name="error-body" id="error-body">
+                                    <input type="hidden" name="error-text" id="error-text">
+                                    <input type="hidden" name="page" id="page" value="<?=$APPLICATION->GetCurPage()?>"><br>
+                                    <button id="send-error" type="button" class="btn btn-primary">Сообщить об ошибке</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div> <!-- //bx-wrapper -->
 
 
