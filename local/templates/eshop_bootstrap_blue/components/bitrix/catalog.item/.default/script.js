@@ -2244,9 +2244,14 @@
 				return;
 
 			var checkbox = this.obCompare.querySelector('[data-entity="compare-checkbox"]');
+			var checkboxTitle = this.obCompare.querySelector('[data-entity="compare-title"]');
 			if (checkbox)
 			{
 				checkbox.checked = state;
+				if (state)
+					checkboxTitle.innerHTML = BX.message('COMPARE_TITLE_BTN_COMPARING');
+				else
+                    checkboxTitle.innerHTML = BX.message('COMPARE_TITLE_BTN');
 			}
 		},
 
